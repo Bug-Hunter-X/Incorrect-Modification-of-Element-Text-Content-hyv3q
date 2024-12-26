@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+  <script>
+    // Correct way to access and modify element content
+    var text = document.getElementById('myDiv').textContent;
+    console.log(text); // Logs the text content correctly
+    document.getElementById('myDiv').innerHTML = "New Text";
+    console.log(document.getElementById('myDiv').textContent); // Logs new text correctly
+  </script>
+</body>
+</html>
