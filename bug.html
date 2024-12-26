@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+  <script>
+    // Incorrect way to access element content
+    var text = document.getElementById('myDiv').textContent;
+    console.log(text); // Logs the text content correctly
+    document.getElementById('myDiv').text = "New Text"; // This is incorrect.  This will not change the text
+    console.log(document.getElementById('myDiv').textContent); //Logs old text
+    //Correct way to modify the element content
+    document.getElementById('myDiv').innerHTML = "New Text";
+    console.log(document.getElementById('myDiv').textContent); //Logs new text
+  </script>
+</body>
+</html>
